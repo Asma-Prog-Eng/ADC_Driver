@@ -1,6 +1,6 @@
 Bare metal implementation  of an ADC driver for STM32 development board 
 ## Features
-ADC initialization with tested ADC rewsolution (6-bits, 8-bits) and peripheral clock = 8MHz.
+ADC initialization with tested ADC resolution (6-bits, 8-bits) and peripheral clock = 8MHz.
 ## Requirements
 ### Hardware
 - STM32 Discovery development board (STM32F411x series)
