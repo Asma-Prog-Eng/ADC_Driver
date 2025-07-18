@@ -3,7 +3,7 @@ Bare metal implementation  of an ADC driver for STM32 development board
 ADC initialization with tested ADC rewsolution (6-bits, 8-bits) and peripheral clock = 8MHz.
 ## Requirements
 ### Hardware
-- Nucleo STM32 development board (STM32F411x series)
+- STM32 Discovery development board (STM32F411x series)
 - Multimeter (optional for debugging)
 - Potentiometer ( input Voltage = 3V)
 ### Software
