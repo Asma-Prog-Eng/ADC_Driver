@@ -17,7 +17,10 @@ Bare metal implementation  of an ADC driver for STM32 development board
 2. Import project into STM32CubeIDE:
 File → Import... → Existing Projects into Workspace
 
-3. Rebuild project dependencies
+3. Update the include path directories ,  to CMSIS folder ( under Project properties -> C/C++ General -> Includes : delete existing CMSIS path directory and  add the path to CMSIS folder <br />,
+   that is included in the project, : Add -> File System <br />
+
+4. Rebuild project dependenciesFile 
 
 ## Usage
 Initialization : ADC1_init () 
