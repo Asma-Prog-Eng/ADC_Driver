@@ -263,7 +263,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Src/syscalls.o
  .debug_macro   0x00000000       0xce ./Src/syscalls.o
  .debug_line    0x00000000      0x8a7 ./Src/syscalls.o
- .debug_str     0x00000000     0x99f8 ./Src/syscalls.o
+ .debug_str     0x00000000     0x99e0 ./Src/syscalls.o
  .comment       0x00000000       0x44 ./Src/syscalls.o
  .debug_frame   0x00000000      0x2ac ./Src/syscalls.o
  .ARM.attributes
@@ -328,7 +328,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./Src/sysmem.o
  .debug_macro   0x00000000      0x1df ./Src/sysmem.o
  .debug_line    0x00000000      0x583 ./Src/sysmem.o
- .debug_str     0x00000000     0x7796 ./Src/sysmem.o
+ .debug_str     0x00000000     0x777e ./Src/sysmem.o
  .comment       0x00000000       0x44 ./Src/sysmem.o
  .debug_frame   0x00000000       0x34 ./Src/sysmem.o
  .ARM.attributes
@@ -959,16 +959,16 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0000e728      0x146 ./Src/ADC.o
  .debug_macro   0x0000e86e       0xd8 ./Src/main.o
 
-.debug_line     0x00000000      0xd16
- .debug_line    0x00000000      0x72e ./Src/ADC.o
- .debug_line    0x0000072e      0x56d ./Src/main.o
- .debug_line    0x00000c9b       0x7b ./Startup/startup_stm32f411vetx.o
+.debug_line     0x00000000      0xc36
+ .debug_line    0x00000000      0x6be ./Src/ADC.o
+ .debug_line    0x000006be      0x4fd ./Src/main.o
+ .debug_line    0x00000bbb       0x7b ./Startup/startup_stm32f411vetx.o
 
-.debug_str      0x00000000    0x53a07
- .debug_str     0x00000000    0x53a07 ./Src/ADC.o
-                              0x53b87 (size before relaxing)
- .debug_str     0x00053a07    0x4fe49 ./Src/main.o
- .debug_str     0x00053a07       0x87 ./Startup/startup_stm32f411vetx.o
+.debug_str      0x00000000    0x539ef
+ .debug_str     0x00000000    0x539ef ./Src/ADC.o
+                              0x53b6f (size before relaxing)
+ .debug_str     0x000539ef    0x4fe31 ./Src/main.o
+ .debug_str     0x000539ef       0x6f ./Startup/startup_stm32f411vetx.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/ADC.o
@@ -983,6 +983,6 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_frame   0x00000188       0x50 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
 
 .debug_line_str
-                0x00000000       0x6b
+                0x00000000       0x53
  .debug_line_str
-                0x00000000       0x6b ./Startup/startup_stm32f411vetx.o
+                0x00000000       0x53 ./Startup/startup_stm32f411vetx.o

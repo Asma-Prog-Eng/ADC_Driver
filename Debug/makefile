@@ -59,8 +59,8 @@ all: main-build
 main-build: ADC_Driver.elf secondary-outputs
 
 # Tool invocations
-ADC_Driver.elf ADC_Driver.map: $(OBJS) $(USER_OBJS) C:\Users\asmae\OneDrive\Bureau\STM32_Training_Discovery\ADC_Drive\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ADC_Driver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\asmae\OneDrive\Bureau\STM32_Training_Discovery\ADC_Drive\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ADC_Driver.elf ADC_Driver.map: $(OBJS) $(USER_OBJS) C:\Users\asmae\OneDrive\Bureau\ADC_Driver\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ADC_Driver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\asmae\OneDrive\Bureau\ADC_Driver\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
