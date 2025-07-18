@@ -5,7 +5,7 @@ ADC initialization with tested ADC rewsolution (6-bits, 8-bits) and peripheral c
 ### Hardware
 - Nucleo STM32 development board (STM32F411x series)
 - Multimeter (optional for debugging)
-- Potentiometer
+- Potentiometer ( input Voltage = 3V)
 ### Software
 - STM32CubeIDE or compatible toolchain
 ## Installation
@@ -19,10 +19,10 @@ File → Import... → Existing Projects into Workspace
 3. Rebuild project dependencies
 
 ## Usage
-Initialization : ADC1_init () ;
-
-Receiving Data 
-
+Initialization : ADC1_init () 
+Define ADC resolution : ADC_resolution_calculation(ADC_bit_resolution)
+Read raw value : ADC1_read()
+Covert raw value into voltage
 
 ## Project Structure
 
@@ -32,20 +32,13 @@ Receiving Data
 
 ## Troubleshooting
 
-No data received:
-- Verify baud rate settings
-- Check TX/RX pin connections
-- Ensure correct clock configuration
-
-Garbage characters:
-- Verify clock source accuracy
-- Check voltage levels
-- 
-Overrun errors:
-- Increase receive buffer size
+No value could be read from on ADC1->DR:
+- Verify clock acess for ADC1 peripheral (RCC->APB2ENR bit)
+- Verify clock acess for port A (RCC->APHBENR bit)
+- Verify PA1 mode (GPIOA->MODER ; bits 2:3 (0x3))
 
 ## Known Limitations
-Limited to 8-bit data words
+Limited to 8-bits resolution
 
 ## Contributing
 Pull requests are welcome. For major changes, open an issue first.
