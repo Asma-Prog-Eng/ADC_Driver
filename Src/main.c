@@ -33,7 +33,7 @@ double Vref = 3.00;
 int main (void) {
 
 
-	 GPIOA_Init();
+	ADC1_Init();
 
 	// Default ADC resolution = 8-bits
 

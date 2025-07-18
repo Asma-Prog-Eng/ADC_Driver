@@ -19,7 +19,7 @@
 #define ADC_CR2SWSTART      (1U << 30)
 
 
-void GPIOA_Init(void) {
+void ADC1_Init(void) {
 
  /************************Configure ADC PIO pin*******************************************/
 
@@ -64,7 +64,10 @@ uint16_t ADC1_read(void ) {
 
 	while (!(ADC1->SR & ADC_SREOC)) {};
 
-   for(int i=0 ; i <10000000; i++){};
+	// simple delay
+
+	for (volatile uint32_t i = 0; i < 5000000; i++){};
+
 	// read data register
 
    return (ADC1->DR & 0xFF);

@@ -648,9 +648,9 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x080007a4                __divdf3
                 0x080007a4                __aeabi_ddiv
  *(.text*)
- .text.GPIOA_Init
+ .text.ADC1_Init
                 0x08000974       0x64 ./Src/ADC.o
-                0x08000974                GPIOA_Init
+                0x08000974                ADC1_Init
  .text.ADC1_read
                 0x080009d8       0x54 ./Src/ADC.o
                 0x080009d8                ADC1_read
@@ -886,7 +886,7 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x00000135       0x22 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
                 0x00000157       0x22 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
-OUTPUT(ADC_Drive.elf elf32-littlearm)
+OUTPUT(ADC_Driver.elf elf32-littlearm)
 LOAD linker stubs
 LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc.a
 LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
@@ -964,11 +964,11 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0000072e      0x56d ./Src/main.o
  .debug_line    0x00000c9b       0x7b ./Startup/startup_stm32f411vetx.o
 
-.debug_str      0x00000000    0x53a08
- .debug_str     0x00000000    0x53a08 ./Src/ADC.o
-                              0x53b88 (size before relaxing)
- .debug_str     0x00053a08    0x4fe4a ./Src/main.o
- .debug_str     0x00053a08       0x87 ./Startup/startup_stm32f411vetx.o
+.debug_str      0x00000000    0x53a07
+ .debug_str     0x00000000    0x53a07 ./Src/ADC.o
+                              0x53b87 (size before relaxing)
+ .debug_str     0x00053a07    0x4fe49 ./Src/main.o
+ .debug_str     0x00053a07       0x87 ./Startup/startup_stm32f411vetx.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/ADC.o
