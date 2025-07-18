@@ -1,6 +1,7 @@
 Bare metal implementation  of an ADC driver for STM32 development board 
 ## Features
-ADC initialization with tested ADC resolution (6-bits, 8-bits) and peripheral clock = 8MHz.
+- ADC1 initialization with tested ADC resolution (6-bits, 8-bits) and peripheral clock = 8MHz.
+- Single mode conversion
 ## Requirements
 ### Hardware
 - STM32 Discovery development board (STM32F411x series)
@@ -33,9 +34,9 @@ Covert raw value into voltage
 ## Troubleshooting
 
 No value could be read from on ADC1->DR:
-- Verify clock acess for ADC1 peripheral (RCC->APB2ENR bit)
-- Verify clock acess for port A (RCC->APHBENR bit)
-- Verify PA1 mode (GPIOA->MODER ; bits 2:3 (0x3))
+- Verify clock acess for ADC1 peripheral (RCC->APB2ENR register)
+- Verify clock acess for port A (RCC->APHBENR register)
+- Verify PA1 mode, should be configured to analog mode (GPIOA->MODER)
 
 ## Known Limitations
 Limited to 8-bits resolution
