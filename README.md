@@ -27,8 +27,8 @@ Covert raw value into voltage
 ## Project Structure
 
 ├── Core<br />
-├── Inc<br />  → uart.h <br />
-├── Src<br /> → uart.c<br /> → main.c
+├── Inc<br />  → ADC.h <br />
+├── Src<br /> → ADC.c<br /> → main.c
 
 ## Troubleshooting
 
