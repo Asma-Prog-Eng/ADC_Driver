@@ -1,42 +1,50 @@
 
 #include "stm32f4xx.h"
-#include <stdio.h>
 #include "ADC.h"
 
 
-#define RCC_ADC1EN          (1U << 8 )
+#define ADC1_EN          (1U << 8 )
 
-#define RCC_GPIOAEN         (1U << 0)
+#define GPIODEN             (1U << 3)
 
-#define ADC_SREOC           (1U << 1)
+#define GPIOAEN         (1U << 0)
 
-#define ADC_CR2ADON         (1U << 0)
+#define GPIOD_MODER_1   (1U << 24)
+
+#define GPIOD_MODER_2   (1U << 25)
+
+
+#define CR2_ADON         (1U << 0)
 
 #define ADC_SQR3SQ1         (1U  << 0)
 
 #define ADC_SQR1L           (1U << 20)
 
-#define ADC_CR2SWSTART      (1U << 30)
+#define  CR1_EOCIE        (1U << 5)
 
 
 void ADC1_Init(void) {
 
- /************************Configure ADC PIO pin*******************************************/
-
-	// enable clock access for port A ( PA1)
-
-    RCC->AHB1ENR |= RCC_GPIOAEN ;
-
-	// configure PA1 pin mode to analog
-
-   GPIOA->MODER |= (0x3 << 2);
 
 
 /*************************Configure ADC parameters *************************************/
 
-	// enable clock access for ADC periph
 
-    RCC->APB2ENR |= RCC_ADC1EN;
+   // disable global interrupts
+
+    __disable_irq();
+
+	 ADC1->CR2 &= ~CR2_ADON;
+
+	 // enable clock access for ADC periph
+
+	 RCC->APB2ENR |= ADC1_EN;
+
+
+   // enable interrupt for adc1
+
+	 ADC1->CR1 |= CR1_EOCIE;
+
 
 	// configure conversion sequence start :  single conversion- channel 1 (ADC1_1)
 
@@ -47,47 +55,54 @@ void ADC1_Init(void) {
 
     ADC1->SQR1 &=~ADC_SQR1L ;
 
+    // Enable ADC1 interrupt  in NVIC
+
+    NVIC_EnableIRQ(ADC_IRQn);
+
+    // enable global interrtupts
+
+    __enable_irq();
+
+
 	// enable ADC periph
 
-    ADC1->CR2 |= ADC_CR2ADON;
+    ADC1->CR2 |= CR2_ADON;
 
 
 }
 
-uint16_t ADC1_read(void ) {
+void start_conversion(void) {
 
-	// start conversion
 
-	ADC1->CR2  |= ADC_CR2SWSTART ;
+	// enable continuous mode
 
-	// wait till conversion is done
+	ADC1->CR2 |= (1U << 1);
 
-	while (!(ADC1->SR & ADC_SREOC)) {};
+	// start adc conversion
 
-	// simple delay
-
-	for (volatile uint32_t i = 0; i < 5000000; i++){};
-
-	// read data register
-
-   return (ADC1->DR & 0xFF);
+    ADC1->CR2  |= (1U << 30) ;
 
 
 }
 
-int ADC_resolution_calculation(int ADC_bit_resolution ) {
 
-	int result = 1;
+void GPIO_init(void) {
 
-	int temp = ADC_bit_resolution ;
+	 /************************Configure ADC PIO pin*******************************************/
 
-	while ( temp > 0) {
+		// enable clock access for port A ( PA1)
 
-		    result *= 2;
-			temp -=1;
-	}
+	    RCC->AHB1ENR |=( GPIOAEN |  GPIODEN ) ;
 
-	return result;
+		// configure PA1 pin mode to analog
+
+	   GPIOA->MODER |= (0x3 << 2);
+
+	/*************************Configure LED PD12 pin********************************************/
+
+	// set PD12 pin mode to digital output : 01
+
+	 GPIOD->MODER |= GPIOD_MODER_1;
+
+	 GPIOD->MODER &= ~GPIOD_MODER_2;
 }
-
-

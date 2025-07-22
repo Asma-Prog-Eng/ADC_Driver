@@ -8,11 +8,15 @@
 #ifndef ADC_H_
 #define ADC_H_
 
+#define SR_EOC          (1U << 1)
 
-uint16_t ADC1_read(void) ;
+#define LED_ON    		(1U << 12)
 
 void ADC1_Init(void);
 
-int ADC_resolution_calculation(int ADC_bit_resolution );
+void GPIO_init(void);
+
+void start_conversion(void);
+
 
 #endif /* ADC_H_ */
