@@ -26,7 +26,7 @@ File → Import... → Existing Projects into Workspace
 Initialization : ADC1_init () 
 Define ADC resolution : ADC_resolution_calculation(ADC_bit_resolution)
 Read raw value : ADC1_read()
-Covert raw value into voltage
+Convert raw value into voltage
 
 ## Project Structure
 
